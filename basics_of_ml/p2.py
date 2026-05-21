@@ -1,0 +1,57 @@
+import numpy as np
+np.random.seed(0)
+import nnfs
+
+nnfs.init()
+
+X = [
+    [1, 2, 3, 2.5],
+    [2.0, 5.0, -1.0, 2.0],
+    [-1.5, 2.7, 3.3, -0.8]
+    ]
+
+
+X, y = spiral_data(100, 3)
+
+
+class Layer_Dense:
+    def __init__(self, n_inputs, n_neurons):
+
+        """
+        initialize weights as smaller random values
+        between -1 to 1
+        biases are zero
+        """
+        self.weights = 0.10 * np.random.randn(n_inputs, n_neurons)
+        self.biases = np.zeros((1, n_neurons))
+
+        
+    def forward(self, inputs):
+        self.output = np.dot(inputs, self.weights) + self.biases
+        return self.output
+
+class Activation_ReLU:
+    def forward(self, inputs):
+        self.output = np.maximum(0, inputs)
+
+
+
+if __name__ =='__main__':
+    layer1 = Layer_Dense(4, 5)
+    activation1 = Activation_ReLU()
+
+    layer1.forward(X)
+    print(layer1.output)
+
+    
+    layer2 = Layer_Dense(5, 2)
+    layer3 = Layer_Dense(2, 4)
+
+    layer1.forward(X)
+    print(layer1.output)
+
+    l2 = layer2.forward(layer1.output)
+    print(l2)
+    
+    l3 = layer3.forward(layer2.output)
+    print(l3)
