@@ -1,0 +1,1 @@
+/Users/macbookair/Neural_Networks_Programming/rust_basics/ownership_in_rust/target/debug/ownership_in_rust: /Users/macbookair/Neural_Networks_Programming/rust_basics/ownership_in_rust/src/main.rs
