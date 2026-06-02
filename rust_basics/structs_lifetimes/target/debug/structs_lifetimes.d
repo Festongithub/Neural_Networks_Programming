@@ -1,0 +1,1 @@
+/Users/macbookair/Neural_Networks_Programming/rust_basics/structs_lifetimes/target/debug/structs_lifetimes: /Users/macbookair/Neural_Networks_Programming/rust_basics/structs_lifetimes/src/main.rs
